@@ -253,8 +253,7 @@
       background-color: $c-light;
       display: block;
       right: 0;
-      transition-property: background-color, width;
-      transition-duration: 1s;
+      transition: background-color 1s, width 1s;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
