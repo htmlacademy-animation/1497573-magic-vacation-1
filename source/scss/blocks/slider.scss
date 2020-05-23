@@ -276,3 +276,30 @@
     }
   }
 }
+
+.swiper-slide-active,
+.swiper-slide-next {
+  .slider__item-text {
+    animation: fadeIn ease 2s, moveLeft ease 2s;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(30px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
