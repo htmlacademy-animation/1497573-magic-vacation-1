@@ -1,9 +1,11 @@
 export default () => {
   let socialBlock = document.querySelector(`.js-social-block`);
+  let list = socialBlock.querySelector(`.social-block__list`);
   let icons = socialBlock.querySelectorAll(`.js-social-menu-item`);
   let toggler = socialBlock.querySelector(`.js-social-toggler`);
 
   const showSocialBlockList = () => {
+    list.classList.add(`social-block__list--opened`);
     for (let i = 0; i < icons.length; i++) {
       setTimeout(() => {
         icons[i].classList.add(`social-block__item--show`);
@@ -19,6 +21,8 @@ export default () => {
   socialBlock.addEventListener(`mouseleave`, function () {
     socialBlock.classList.remove(`social-block--active`);
     if (!toggler.classList.contains(`social-block__toggler--open`)) {
+
+      list.classList.remove(`social-block__list--opened`);
       for (let i = 0; i < icons.length; i++) {
         setTimeout(() => {
           icons[i].classList.remove(`social-block__item--show`);
