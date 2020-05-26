@@ -145,18 +145,9 @@
     }
   }
 
-  &:hover {
-   // opacity: 1;
-    pointer-events: auto;
-  }
-
-  &:focus-within {
- //   opacity: 1;
-    pointer-events: auto;
-  }
-
+  &:hover,
+  &:focus-within,
   .social-block--active & {
-   // opacity: 1;
     pointer-events: auto;
   }
 }
