@@ -105,7 +105,7 @@
   top: 100%;
   right: 0;
   margin-top: 1.5rem;
-  opacity: 0;
+  //opacity: 0;
   pointer-events: none;
 
   @media (min-width: $stop-scaling) {
@@ -118,7 +118,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 0;
-    opacity: 1;
+   // opacity: 1;
     pointer-events: auto;
   }
 
@@ -128,7 +128,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 0;
-    opacity: 1;
+   // opacity: 1;
     pointer-events: auto;
   }
 
@@ -146,17 +146,17 @@
   }
 
   &:hover {
-    opacity: 1;
+   // opacity: 1;
     pointer-events: auto;
   }
 
   &:focus-within {
-    opacity: 1;
+ //   opacity: 1;
     pointer-events: auto;
   }
 
   .social-block--active & {
-    opacity: 1;
+   // opacity: 1;
     pointer-events: auto;
   }
 }
