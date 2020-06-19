@@ -96,6 +96,8 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+  opacity: 0;
+  transform: translateX(30px);
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
@@ -277,12 +279,28 @@
   }
 }
 
+
+//.swiper-slide-active,
+//.swiper-slide-next {
+//  .slider__item-text {
+//    animation: fadeIn ease 2s, moveLeft ease 2s;
+//  }
+//}
+
 .swiper-slide-active,
 .swiper-slide-next {
-  .slider__item-text {
-    animation: fadeIn ease 2s, moveLeft ease 2s;
+  .slider__item-text--hidden {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  .slider__item-text--shown {
+    opacity: 1;
+    transform: translateX(0);
+    transition-duration: 1s;
   }
 }
+
 
 @keyframes fadeIn {
   0% {
