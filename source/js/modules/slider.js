@@ -30,7 +30,12 @@ export default () => {
             showText(`.swiper-slide-active`);
           },
           slideChange: () => {
+            sliderContainer
+              .querySelector(`.slider__item-text--shown`)
+              .classList.remove(`slider__item-text--shown`);
+
             showText(`.swiper-slide-active`);
+
             if (storySlider.activeIndex === 0 || storySlider.activeIndex === 1) {
               sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
             } else if (storySlider.activeIndex === 2 || storySlider.activeIndex === 3) {
@@ -71,17 +76,12 @@ export default () => {
             }, 400);
           },
           slideChange: () => {
-            setTimeout(() => {
-              console.log(sliderContainer
-                .querySelector(`.swiper-slide-prev`));
-            }, 200);
+            sliderContainer
+              .querySelectorAll(`.slider__item-text--shown`)
+              .forEach((item) => {
+                item.classList.remove(`slider__item-text--shown`);
+              });
 
-            // setTimeout(() => {
-            //   sliderContainer
-            //     .querySelector(`.swiper-slide-previous`)
-            //     .querySelector(`.slider__item-text`)
-            //     .classList.remove(`slider__item-text--shown`);
-            // }, 200);
             showText(`.swiper-slide-active`);
             setTimeout(() => {
               showText(`.swiper-slide-next`);
