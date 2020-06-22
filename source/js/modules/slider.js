@@ -6,15 +6,6 @@ export default () => {
 
   sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
 
-  const showText = function (slideClass) {
-    setTimeout(() => {
-      sliderContainer
-        .querySelector(slideClass)
-        .querySelector(`.slider__item-text`)
-        .classList.add(`slider__item-text--shown`);
-    }, 100);
-  };
-
   const setSlider = function () {
     if (((window.innerWidth / window.innerHeight) < 1) || window.innerWidth < 769) {
       storySlider = new Swiper(`.js-slider`, {
@@ -26,16 +17,7 @@ export default () => {
           enabled: true
         },
         on: {
-          init: () => {
-            showText(`.swiper-slide-active`);
-          },
           slideChange: () => {
-            sliderContainer
-              .querySelector(`.slider__item-text--shown`)
-              .classList.remove(`slider__item-text--shown`);
-
-            showText(`.swiper-slide-active`);
-
             if (storySlider.activeIndex === 0 || storySlider.activeIndex === 1) {
               sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
             } else if (storySlider.activeIndex === 2 || storySlider.activeIndex === 3) {
@@ -69,24 +51,7 @@ export default () => {
           enabled: true
         },
         on: {
-          init: () => {
-            showText(`.swiper-slide-active`);
-            setTimeout(() => {
-              showText(`.swiper-slide-next`);
-            }, 400);
-          },
           slideChange: () => {
-            sliderContainer
-              .querySelectorAll(`.slider__item-text--shown`)
-              .forEach((item) => {
-                item.classList.remove(`slider__item-text--shown`);
-              });
-
-            showText(`.swiper-slide-active`);
-            setTimeout(() => {
-              showText(`.swiper-slide-next`);
-            }, 400);
-
             if (storySlider.activeIndex === 0) {
               sliderContainer.style.backgroundImage = `url("img/slide1.jpg")`;
             } else if (storySlider.activeIndex === 2) {
