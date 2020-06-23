@@ -31,6 +31,16 @@ export default () => {
           document.querySelector(`.intro__message`).classList.remove(`intro__message--shown`);
         }, 100);
       }
+
+      if (e.target.dataset.href === `game`) {
+        setTimeout(() => {
+          document.querySelector(`.form__field`).classList.add(`form__field--full`);
+        }, 100);
+      } else {
+        setTimeout(() => {
+          document.querySelector(`.form__field`).classList.remove(`form__field--full`);
+        }, 100);
+      }
     });
   }
 };
